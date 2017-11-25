@@ -1,0 +1,16 @@
+ Public void setDriverPath(String Expectedplatform ) {
+   String str=Expectedplatform
+ 
+ Switch(str)
+        case: PlatformUtil.isMac{
+            System.setProperty("webdriver.chrome.driver", "chromedriver");
+            break;
+        }
+       case: PlatformUtil.isWindows {
+            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+            break;
+        }
+        case :PlatformUtil.isLinux {
+            System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
+            break;
+        }
