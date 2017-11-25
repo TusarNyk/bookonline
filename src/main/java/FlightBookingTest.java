@@ -13,18 +13,19 @@ import java.util.List;
 public class FlightBookingTest {
 
     WebDriver driver = new ChromeDriver();
+ElementObject eleobj=new ElementObject();
 
-
+    Commonmethod cm=new CommonMethod(0;
     @Test
     public void testThatResultsAppearForAOneWayJourney() {
-
-        setDriverPath();
+//we need create object for all the webelement in a common file and we we use those  element by creating the object referance 
+        cm.setDriverPath("your desired platform")
         driver.get("https://www.cleartrip.com/");
         waitFor(2000);
-        driver.findElement(By.id("OneWay")).click();
+       eleobj.MoodOfFlying.click();
 
         driver.findElement(By.id("FromTag")).clear();
-        driver.findElement(By.id("FromTag")).sendKeys("Bangalore");
+        eleobj.FromAddress.sendKeys("Bangalore");
 
         //wait for the auto complete options to appear for the origin
 
@@ -33,7 +34,7 @@ public class FlightBookingTest {
         originOptions.get(0).click();
 
         driver.findElement(By.id("toTag")).clear();
-        driver.findElement(By.id("toTag")).sendKeys("Delhi");
+        eleobj.ToAddressAddress.sendKeys("Delhi");
 
         //wait for the auto complete options to appear for the destination
 
@@ -75,7 +76,7 @@ public class FlightBookingTest {
         }
     }
 
-    private void setDriverPath() {
+   //* private void setDriverPath( ) {
         if (PlatformUtil.isMac()) {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }
@@ -84,6 +85,6 @@ public class FlightBookingTest {
         }
         if (PlatformUtil.isLinux()) {
             System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
-        }
+        }*//
     }
 }
