@@ -1,0 +1,3 @@
+Webelement MoodOfFlying=driver.findelement(By.id("OneWay"));
+Webelement FromAddress=driver.findelement(By.id("OneWay"));
+Webelement Toaddress=driver.findelement(By.id("OneWay"));
